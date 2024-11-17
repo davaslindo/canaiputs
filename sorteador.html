@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador de Nomes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .container img {
+            max-width: 200px;
+            margin-bottom: 15px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-size: 20px;
+            color: #333;
+        }
+        .fixed-image-right {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 400px; /* Ajuste o tamanho conforme necessário */
+        }
+        .fixed-image-left {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            width: 260px; /* Ajuste o tamanho conforme necessário */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="almofadaCanaiputs.jpg" alt="Imagem centralizada">
+        <h1>Sorteio da almofada oficial Canaiputs</h1>
+        <p>Almofada linda canaiputs 2024 atualizado sem vírus⚡️⚡</p>
+        <p>amofada lovers😍:</p>
+        <button onclick="sortearNome()">Sortear fã humilde</button>
+        <div id="resultado"></div>
+    </div>
+
+    <!-- Imagem no canto inferior direito -->
+    <img id="imagemInferiorDireita" src="eupensando.png" alt="Ícone no canto inferior direito" class="fixed-image-right">
+
+    <!-- Imagem no canto inferior esquerdo -->
+    <img id="imagemInferiorEsquerda" src="davipensando.png" alt="Ícone no canto inferior esquerdo" class="fixed-image-left">
+
+    <script>
+        // const nomes = ["Daich do 1°", "Vini", "Bagi"];
+        const nomes = ["Bagi"];
+        // Mapeamento de nomes para imagens
+        const imagens = {
+        };
+
+        function sortearNome() {
+            if (nomes.length === 0) {
+                document.getElementById("resultado").innerText = "A lista de nomes está vazia!";
+                return;
+            }
+            const nomeSorteado = nomes[Math.floor(Math.random() * nomes.length)];
+            document.getElementById("resultado").innerText = `Fã humilde que amamos muito é: ${nomeSorteado}`;
+
+            // Mudar imagem se existir uma para o nome sorteado
+            const novaImagem = imagens[nomeSorteado];
+            if (novaImagem) {
+                document.getElementById("imagemInferiorDireita").src = novaImagem;
+            } else {
+                // Definir uma imagem padrão se o nome não tiver uma imagem associada
+                document.getElementById("imagemInferiorDireita").src = "eusurpreso.png";
+            }
+            const novaImagem2 = imagens[nomeSorteado];
+            if (novaImagem2) {
+                document.getElementById("imagemInferiorEsquerda").src = novaImagem2;
+            } else {
+                // Definir uma imagem padrão se o nome não tiver uma imagem associada
+                document.getElementById("imagemInferiorEsquerda").src = "davisurpreso.png";
+            }
+        }
+    </script>
+</body>
+</html>
